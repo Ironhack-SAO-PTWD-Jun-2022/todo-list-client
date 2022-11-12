@@ -1,6 +1,6 @@
 .wrapper {
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,9 +13,9 @@
 }
 
 .spinner > div {
-  width: 36px;
-  height: 36px;
-  background-color: #333;
+  width: 30px;
+  height: 30px;
+  background-color: #4aaafa;
 
   border-radius: 100%;
   display: inline-block;

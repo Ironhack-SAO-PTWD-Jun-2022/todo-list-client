@@ -1,4 +1,7 @@
 import axios from 'axios';
+import { isEmpty } from '../utils/validation.utils';
+import { handleResponseError } from '../utils/errors.utils';
+import { getToken, storeToken } from '../utils/token.utils';
 
 class AuthApi {
   constructor() {
@@ -10,13 +13,36 @@ class AuthApi {
   }
   
   // método de cadastro/signup
+  signup = async ({username, password}) => {
+    try {
+      const hasEmptyFields = isEmpty(username, password);
+      if (hasEmptyFields) {
+        throw new Error('Campos obrigatórios.')
+      }
+      await this.api.post('/auth/signup', {username, password});
+    } catch (error) {
+      handleResponseError(error);
+    }
+  };
   
   // método de login
-  
+  login = async ({ username, password }) => {
+    try {
+      const hasEmptyFields = isEmpty(username, password);
+      if (hasEmptyFields) {
+        throw new Error('Campos obrigatórios.')
+      }
+      const { data } = await this.api.post('/auth/login', {username, password});
+      storeToken(data.token);
+    } catch (error) {
+      handleResponseError(error);
+    }
+  }
+
   // método de verificação
   verify = async () => {
     // recupera o token que estiver armazenado no localStorage
-    const token = localStorage.getItem('authToken');
+    const token = getToken();
     try {
       // faz a requisição no backend colocando o token na autorização dos headers.
       // esperamos a resposta ser as informações de dentro do token.
@@ -27,7 +53,7 @@ class AuthApi {
       })
       return data;
     } catch (error) {
-      // trate o erro de acordo com o q foi devolvido do backend
+      handleResponseError(error);
     }
   }
 }

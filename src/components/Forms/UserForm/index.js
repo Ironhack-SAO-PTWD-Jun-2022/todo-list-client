@@ -2,8 +2,9 @@ import { useState } from 'react';
 import '../styles.css';
 
 import { Button } from '../../Buttons';
+import Loading from '../../Loading';
 
-const UserForm = ({ onSubmit, submitText }) => {
+const UserForm = ({ loading, onSubmit, submitText }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -22,7 +23,7 @@ const UserForm = ({ onSubmit, submitText }) => {
         <label htmlFor='username'>Password</label>
         <input type='password' value={password} onChange={(e) => setPassword(e.target.value)} />
       </div>
-      <Button color='secondary'>{submitText}</Button>
+      {loading ? <Loading /> : <Button color='secondary'>{submitText}</Button>}
     </form>
   )
 }
