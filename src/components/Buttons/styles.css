@@ -2,7 +2,6 @@
   padding: 0.4rem;
   border-radius: 1rem;
   cursor: pointer;
-  font-weight: bold;
 }
 
 .btn,
@@ -16,4 +15,23 @@
   background-color: #4aaafa;
   color: #efefef;
   border: 1px solid #efefef;
+}
+
+.btn-nav {
+  text-decoration: none;
+  padding: 0.4rem 1rem;
+  border-radius: 1rem;
+  font-weight: bold;
+}
+
+.btn-nav.primary.active {
+  background-color: #4aaafa;
+  color: #efefef;
+  border: 1px solid #efefef;
+}
+
+.btn-nav.secondary.active {
+  background-color: #efefef;
+  color: #4aaafa;
+  border: 1px solid #4aaafa;
 }

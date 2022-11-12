@@ -1,21 +1,21 @@
 import { useContext } from 'react';
 import { AuthContext } from '../../context/auth.context';
 import './styles.css';
-import { Button } from '../Buttons';
+import { NavButton } from '../Buttons';
 
 const Navbar = () => {
   const { isLoggedIn } = useContext(AuthContext);
 
   return (
     <nav className='navbar'>
-      <h2 className='brand'>Lista de Tarefas 78</h2>
+      <h1 className='brand'>Lista de Tarefas 78</h1>
       <div className='btn-container'>
         {isLoggedIn ? (
-          <button className='btn'>Logout</button>
+          <NavButton onClick={() => console.log('logout')}>Logout</NavButton>
         ) : (
           <>
-            <Button onClick={() => console.log('signup')}>Signup</Button>
-            <Button color='secondary' onClick={() => console.log('login')}>Login</Button>
+            <NavButton url='/signup'>Signup</NavButton>
+            <NavButton url='/'>Login</NavButton>
           </>
         )}
       </div>

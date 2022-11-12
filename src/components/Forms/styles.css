@@ -1,0 +1,31 @@
+.form-container {
+  width: 600px;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  border: 1px solid #4aaafa;
+  display: flex;
+  gap: 0.7rem;
+  flex-direction: column;
+}
+
+.form-control {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.form-control > label {
+  width: 100px;
+  text-align: right;
+}
+
+.form-control > input {
+  min-width: 250px;
+  max-width: 100%;
+}
+
+.form-container > button {
+  align-self: center;
+  width: 200px;
+}
