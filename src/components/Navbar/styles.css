@@ -1,0 +1,16 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #4aaafa;
+}
+
+.brand {
+  color: #efefef;
+}
+
+.btn-container {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}

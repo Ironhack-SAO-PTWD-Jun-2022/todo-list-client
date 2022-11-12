@@ -1,0 +1,19 @@
+.btn {
+  padding: 0.4rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn,
+.primary {
+  background-color: #efefef;
+  color: #4aaafa;
+  border: 1px solid #4aaafa;
+}
+
+.secondary {
+  background-color: #4aaafa;
+  color: #efefef;
+  border: 1px solid #efefef;
+}
